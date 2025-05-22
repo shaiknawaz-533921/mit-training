@@ -37,4 +37,4 @@ class BirthdateCalculatorAgent(BaseAgent):
             return days_until
 
         except ValueError as e:
-            raise ValueError("Invalid birthdate format. Please use 'DD-MM' (e.g., '15-06').")
+            raise ValueError("Invalid birth_date format. Please use 'DD-MM' (e.g., '15-06').")
