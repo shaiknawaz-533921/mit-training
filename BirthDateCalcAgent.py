@@ -7,19 +7,19 @@ class BirthdateCalculatorAgent(BaseAgent):
         # Initialize the parent class with agent details
         super().__init__(
             name="BirthdateCalculatorAgent",
-            description="Calculates days until the next birthday",
+            description="Calculates days until the next birthday using day and month",
             action=self.calculate_days_until_birthday
         )
 
     def calculate_days_until_birthday(self, birthdate: str) -> int:
         try:
-            # Parse the input birthdate
-            birth_date = datetime.strptime(birthdate, "%Y-%m-%d").date()
+            # Parse the input birthdate in 'DD-MM' format
+            birth_date = datetime.strptime(birthdate, "%d-%m").date()
             today = date.today()
 
-            # Get the birth month and day
-            birth_month = birth_date.month
+            # Get the birth day and month
             birth_day = birth_date.day
+            birth_month = birth_date.month
 
             # Calculate this year's birthday
             this_year_birthday = date(today.year, birth_month, birth_day)
@@ -33,8 +33,8 @@ class BirthdateCalculatorAgent(BaseAgent):
             # Calculate days until next birthday
             days_until = (next_birthday - today).days
 
-            print(f"[{self.name}]: Days until next birthday: {days_until}")
+            print(f"Days until next birthday (on {next_birthday.strftime('%B %d, %Y')}): {days_until} Days")
             return days_until
 
         except ValueError as e:
-            raise ValueError("Invalid birthdate format. Please use 'YYYY-MM-DD'.")
+            raise ValueError("Invalid birthdate format. Please use 'DD-MM' (e.g., '15-06').")
