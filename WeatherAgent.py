@@ -12,3 +12,4 @@ class WeatherAgent(BaseAgent):
             description="Provides mock weather data for a given location.",
             action=weather_action
         )
+
