@@ -1,9 +1,9 @@
 from BaseAgent import BaseAgent
 
 def wish_agent(name: str):
-    return f"Hello , {name}!"
+    return f"Hello , {name}! Hope you're doing well!"
 
-class GreetAgent(BaseAgent):
+class WishAgent(BaseAgent):
     def __init__(self):
         super().__init__(
             name="WishAgent",
