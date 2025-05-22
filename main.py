@@ -1,5 +1,6 @@
 from GreetAgent import GreetAgent
 from BirthdayAgent import BirthdayAgent
+from WishAgent import WishAgent
 from WeatherAgent import WeatherAgent
 
 if __name__ == "__main__":
@@ -8,6 +9,9 @@ if __name__ == "__main__":
 
     birthday_agent = BirthdayAgent()
     print(birthday_agent.process_request("Bob"))  # Output: Happy Birthday, Bob! 🎉
+
+    wish_agent = WishAgent()
+    print(wish_agent.process_request("Rita"))
     
     weather_agent = WeatherAgent()
     print(weather_agent.process_request("New York"))  # Output: The current weather in New York is Sunny with 25°C temperature.     
