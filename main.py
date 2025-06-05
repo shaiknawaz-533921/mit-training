@@ -1,6 +1,7 @@
 from GreetAgent import GreetAgent
 from BirthdayAgent import BirthdayAgent
 from WeatherAgent import WeatherAgent
+from WeatherAgent import bookMyHotel
 
 if __name__ == "__main__":
     greet_agent = GreetAgent()
@@ -11,3 +12,6 @@ if __name__ == "__main__":
     
     weather_agent = WeatherAgent()
     print(weather_agent.process_request("New York"))  # Output: The current weather in New York is Sunny with 25°C temperature.     
+
+    hotel_agent = bookMyHotel()
+    print(hotel_agent.process_request("book me a hotel in New York from 20-12-2025 to 25-12-2025"))  # Output: Booking confirmed for a hotel in New York from 20-12-2025 to 25-12-2025.
