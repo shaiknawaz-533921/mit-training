@@ -1,6 +1,8 @@
 from GreetAgent import GreetAgent
 from BirthdayAgent import BirthdayAgent
+from TimezoneConverterAgent import TimezoneConverterAgent
 from WeatherAgent import WeatherAgent
+
 
 if __name__ == "__main__":
     greet_agent = GreetAgent()
@@ -8,6 +10,10 @@ if __name__ == "__main__":
 
     birthday_agent = BirthdayAgent()
     print(birthday_agent.process_request("Bob"))  # Output: Happy Birthday, Bob! 🎉
+    tz_agent = TimezoneConverterAgent()
+    result = tz_agent.process_request("2025-05-21 22:10", "UTC", "Asia/Kolkata")
+    print(result)
     
     weather_agent = WeatherAgent()
     print(weather_agent.process_request("New York"))  # Output: The current weather in New York is Sunny with 25°C temperature.     
+
