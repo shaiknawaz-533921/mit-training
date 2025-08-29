@@ -1,0 +1,12 @@
+from BaseAgent import BaseAgent
+
+def hello_action(name: str):
+    return f"Hello World, This is {name}!"
+
+class IntroAgent(BaseAgent):
+    def __init__(self):
+        super().__init__(
+            name="IntroAgent",
+            description="Introduce to the world.",
+            action=hello_action
+        )
